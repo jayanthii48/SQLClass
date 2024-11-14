@@ -92,9 +92,6 @@ SELECT first_name, last_name FROM staff;
 -- Select with WHERE condition (filter by position)
 SELECT * FROM staff WHERE position = 'Software Engineer';
 
--- ============================================
--- 11. Show database details
--- ============================================
 
 -- Show information about the current database
 SHOW DATABASES;
