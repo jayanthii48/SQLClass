@@ -14,7 +14,7 @@ CREATE TABLE employees (
     position VARCHAR(100) COMMENT 'Job position of the employee',                            -- Job position of the employee
     hire_date DATE,                                   										 -- Date of hiring
     salary DECIMAL(10, 2)  COMMENT 'Salary of the employee',                           		 -- Salary of the employee
-    department_id INT                                 										 -- Reference to department
+    department_id INT  ,                            										 -- Reference to department
 );
 SHOW FULL COLUMNS FROM employees;
 
@@ -61,17 +61,17 @@ DESCRIBE employees;
 -- Add a new column 'email' to the 'employees' table
 ALTER TABLE employees ADD COLUMN email VARCHAR(100);
 ALTER TABLE employees DROP COLUMN email;
-=
+
 
 -- Renaming 'employees' table to 'staff'
 RENAME TABLE employees TO staff;
 
 
-
+select * from staff;
 -- Remove all records from the 'staff' table but keep the structure intact
 TRUNCATE TABLE staff;
 SELECT * FROM STAFF
-
+select * from employees
 
 -- Drop the 'departments' table (removes the table and all its data)
 DROP TABLE departments;
