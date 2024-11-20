@@ -1,0 +1,168 @@
+
+Scenario:
+Imagine you're managing an online store. 
+You’ve just completed processing an order, and now you need to update the order status to COMPLETED.
+Once you confirm everything is correct, you want to commit the changes to ensure the update is saved permanently
+
+
+Task:
+Start a transaction, update the status of order #1, and commit the changes. Think of this as finalizing the order in your system.
+
+Scenario:
+You are working on an order management system, and 
+you accidentally update the amount of an order to a higher value that is not valid. 
+Before finalizing the change, you realize the mistake and decide to rollback the transaction to prevent any issues.
+
+Task:
+Start a transaction, update the order amount for order #2 to 150.00, but rollback the change as if you never made it.
+
+
+Scenario:
+You are working on an order system where you need to update both the amount and the status of orders. 
+However, halfway through, you realize that you should only apply the changes to the amount and not the status.
+You need to use a savepoint to rollback to that exact point.
+
+Task:
+Start a transaction, update the amount of order #1, create a savepoint, update the status of order #3, and then rollback to the savepoint. After that, commit the changes.
+
+
+Scenario:
+You are managing user registrations for an event.
+As part of your system, you are updating user details for multiple users. 
+However, halfway through, you realize you made a mistake while updating the email of one user. 
+You want to rollback only the changes for that user and keep the others.
+
+Task:
+Start a transaction, update the name of user #1, create a savepoint, update the email of user #2, and then rollback to the first savepoint. Finally, commit the changes.
+
+
+Scenario:
+You are working with a database that has automatic commits enabled by default.
+ However, you need to temporarily disable autocommit to manually commit changes after verifying them. 
+You make some updates and manually commit the changes.
+
+Task:
+Disable autocommit, update the amount for order #3, and commit the changes manually. Make sure to re-enable autocommit after that.
+
+
+Scenario:
+You’re making updates to a user’s email address in your system,
+but you forget to commit the transaction before closing the session.
+When you restart the session, the changes you made should no longer be there.
+
+Task:
+Start a transaction, update the email address of user #3, and then exit without committing. Restart the session and check if the change is still there.
+
+
+Scenario:
+You are inserting new orders into the system.
+However, you mistakenly try to insert an order with an invalid user ID.
+When the error occurs, you need to roll back the transaction to keep the database in a consistent state.
+
+Task:
+Start a transaction, insert an order for user #4, and then insert another order with an invalid user ID. Use ROLLBACK to undo both insertions due to the error.
+
+Scenario:
+You’re working on an order management system where multiple updates are being applied to existing orders.
+After performing the updates, you decide that it would be better to rollback all the changes made in this transaction.
+
+Task:
+Start a transaction, update the status of all PENDING orders to PROCESSING, and update the amount of orders greater than 150. Rollback all changes made during this transaction.
+
+
+
+Insert Multiple Users and Rollback If Any Insertion Fails
+Scenario:
+You are inserting multiple users into the registration system.
+However, one of the users has missing information, and the insertion fails.
+To avoid partial insertions, you want to rollback the transaction entirely.
+
+Task:
+Start a transaction, insert a valid user with name Tom Cruise, and then try inserting another user with a missing name. Rollback the entire transaction when the error occurs.
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------
+ User Registration System
+Scenario: Build a Users table for a website where:
+
+Every user must have a unique email and username.
+The account_status column should have a default value of 'active'.
+The password column must not be NULL.
+
+Task:
+Create the Users table with the following fields:
+
+user_id: 
+email: 
+username: 
+
+Try inserting:
+
+A user with the same email as an existing user.
+A user without providing a password.
+
+-----------------------------------------------------------------------------
+Exercise 2: Product Catalog
+Scenario: Design a Products table for an e-commerce website where:
+
+Each product must have a unique product_code.
+The price cannot be NULL.
+The stock column defaults to 100.
+Task:
+
+Create the Products table with the following fields:
+
+product_id: Auto-incrementing primary key.
+product_code: Unique and not null.
+product_name: Not null.
+price: Not null.
+stock: Default value of 100.
+
+A product with a duplicate product_code.
+A product without specifying a price.
+
+-----------------------------------------------------------------------------
+Employee Management System
+
+Scenario: 
+Create an Employees table for an organization where:
+Every employee must have a unique email.
+The designation column cannot be NULL.
+The joining_date should default to the current date.
+Task:
+
+Create the Employees table with the following fields:
+
+Try inserting:
+
+An employee without an email.
+An employee with the same email as an existing employee.
+-----------------------------------------------------------------------------
+
+ Customer Feedback System
+
+
+Scenario: Design a Feedback table for customer reviews where:
+Each feedback must have a unique feedback_id.
+The customer_name column cannot be NULL.
+The rating column should have a default value of 3.
+
+Task:
+Create the Feedback table with the following fields:
+
+feedback_id: 
+customer_name:
+rating: 
+comments: Optional.
+
+Insert the following feedback:
+
+Try inserting:
+
+A feedback entry without a customer_name.
+A feedback entry with a rating outside the valid range (e.g., 6).
