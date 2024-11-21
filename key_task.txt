@@ -1,0 +1,62 @@
+
+--------------------------------------------------------------------------------------------------------------------
+
+ 1: Create Tables with Primary and Foreign Keys
+
+Create two tables:
+Authors: AuthorID and AuthorName.
+Books: BookID , BookName,  
+--------------------------------------------------------------------------------------------------------------------
+
+ 2: Test Foreign Key Constraints
+
+Add ON DELETE CASCADE to the foreign key in the Books table.
+Insert records into both tables and test the behavior
+Delete a record from the Authors table and check if related books are also deleted.
+
+--------------------------------------------------------------------------------------------------------------------
+
+ 3: Update Foreign Key with Cascading Updates
+
+Modify the foreign key in the Books table to include ON UPDATE CASCADE.
+Update an AuthorID in the Authors table and observe how it affects the Books table.
+
+--------------------------------------------------------------------------------------------------------------------
+
+ 4: Add SET NULL Behavior
+
+Create a new table:
+Genres: GenreID and GenreName.
+BooksGenres: BookID and GenreID, both as Foreign Keys referencing the respective tables with ON DELETE SET NULL.
+
+Insert some sample data and test:
+Delete a genre and observe the changes in the BooksGenres table.
+
+--------------------------------------------------------------------------------------------------------------------
+
+ 5: Use Composite Primary Key
+Create a table Enrollments:
+Columns: StudentID, CourseID, and EnrollmentDate.
+Use a composite primary key 
+Insert records with the same StudentID but different CourseID and vice versa to validate uniqueness.
+
+--------------------------------------------------------------------------------------------------------------------
+
+ 6: Restrict Deletion of Parent Records
+Create a table Departments:
+DepartmentID and DepartmentName.
+Another table Employees:
+EmployeeID  and DepartmentID (Foreign Key with ON DELETE RESTRICT).
+Test the behavior by attempting to delete a department that has employees.
+
+--------------------------------------------------------------------------------------------------------------------
+
+ 7: Combine Multiple Foreign Keys
+
+Create a table Orders:
+Columns: OrderID, CustomerID, and ProductID.
+Set CustomerID as a Foreign Key 
+Set ProductID as a Foreign Key
+Insert data into all related tables and test how changes in parent tables affect the Orders table.
+
+--------------------------------------------------------------------------------------------------------------------
