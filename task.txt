@@ -166,3 +166,18 @@ Try inserting:
 
 A feedback entry without a customer_name.
 A feedback entry with a rating outside the valid range (e.g., 6).
+
+
+---------------------------------------------------------------------------------
+
+Task: Managing Employee Data with Check Constraints
+You are tasked with managing an employee database for a company.
+ The company has specific rules regarding employee data, 
+and you need to create a table to ensure the data follows those rules.
+
+Business Rules :
+Employees must be at least 18 years old.
+Employees cannot have a salary less than 1000.
+The employee’s department ID must exist in the departments table.
+Employees must have a valid email address format (use a simple check to ensure that the email contains @ and a period .).
+The employee’s age should not exceed 100.
