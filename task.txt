@@ -181,3 +181,30 @@ Employees cannot have a salary less than 1000.
 The employee’s department ID must exist in the departments table.
 Employees must have a valid email address format (use a simple check to ensure that the email contains @ and a period .).
 The employee’s age should not exceed 100.
+
+
+
+
+
+
+
+
+
+
+
+How would you retrieve a list of student names and 
+the courses they are enrolled in using an inner join between the Students and Courses tables?
+
+How can you retrieve the course names and professor names by joining the Courses and Staff tables?
+
+What SQL query would you use to get the student’s name, course name, course code, 
+and instructor’s name by joining the Students, Courses, and Staff tables?
+
+How can you list the students enrolled in courses taught by a specific professor, say Dr. Charlie Black, using an inner join?
+
+What SQL query will help you list all courses along with their course code, the professor’s name, 
+and the number of students enrolled in each course by joining the Courses, Staff, and Students tables?
+
+How would you retrieve a list of all students, the courses they are enrolled in, 
+and the professor teaching those courses by joining the Students, Courses, and Staff tables?
+
