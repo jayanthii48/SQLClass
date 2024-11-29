@@ -2,7 +2,9 @@ SELECT column_names
 FROM table1
 INNER JOIN table2
 ON table1.column = table2.column;
-
+CREATE DATABASE GP
+USE GP
+drop database gp
 -- 1. Create Customers Table
 CREATE TABLE Customers (
     CustomerID INT AUTO_INCREMENT PRIMARY KEY,
@@ -24,6 +26,16 @@ VALUES
     ('Ivy', 'ivy@example.com'),
     ('Jack', 'jack@example.com');
 
+
+select c.CustomerName ,
+     o.TotalAmount 
+from Customers c 
+inner join Orders o
+on c.CustomerID=o.CustomerID;
+
+
+
+
 -- 3. Create Orders Table
 CREATE TABLE Orders (
     OrderID INT AUTO_INCREMENT PRIMARY KEY,
@@ -39,7 +51,6 @@ VALUES
     (1, '2024-11-01', 200.00),
     (2, '2024-11-02', 150.00),
     (1, '2024-11-03', 120.00),
-    (4, '2024-11-04', 90.00),  -- This customer does not exist in Customers table
     (5, '2024-11-05', 250.00),
     (6, '2024-11-06', 80.00),
     (7, '2024-11-07', 140.00),
@@ -80,17 +91,11 @@ CREATE TABLE OrderDetails (
 -- 8. Insert data into OrderDetails Table
 INSERT INTO OrderDetails (OrderID, ProductID)
 VALUES 
-    (101, 1),  -- Alice bought Pen
-    (103, 2),  -- Alice bought Notebook
-    (102, 3),  -- Bob bought Pencil
-    (104, 4),  -- David bought Eraser
-    (105, 5),  -- Eve bought Marker
-    (106, 6),  -- Frank bought Highlighter
-    (107, 7),  -- Grace bought Ruler
-    (108, 8),  -- Hannah bought Scissors
-    (109, 9),  -- Ivy bought Glue
-    (110, 10); -- Jack bought Tape
-
+    (1,1),
+    (2,2),
+    (3,3);
+    
+SELECT * FROM OrderDetails
 -- 9. Perform INNER JOIN using simple aliases (c for Customers, o for Orders)
 SELECT 
     c.CustomerID, 
