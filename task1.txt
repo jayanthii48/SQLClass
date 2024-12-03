@@ -1,0 +1,11 @@
+Self Join - Find pairs of students in the same grade
+Cross Join - Pair each student with all other students
+Self Join - Find classmates of a specific student (e.g., Alice)
+Cross Join - Generate study group pairs of all grades
+
+
+using 2 table student and course:
+Find all students and their courses (if available)
+Find students and their matching courses based on grade
+
+
