@@ -9,3 +9,49 @@ Find all students and their courses (if available)
 Find students and their matching courses based on grade
 
 
+
+-- Create the first table: branch1
+    id 
+    product_name 
+    category 
+    price
+
+INSERT INTO branch1 (id, product_name, category, price) VALUES
+(1, 'Laptop', 'Electronics', 750.00),
+(2, 'Refrigerator', 'Appliances', 1200.00),
+(3, 'Smartphone', 'Electronics', 500.00),
+(4, 'Table', 'Furniture', 200.00),
+(5, 'Chair', 'Furniture', 80.00),
+(6, 'Washing Machine', 'Appliances', 900.00),
+(7, 'Television', 'Electronics', 400.00),
+(8, 'Sofa', 'Furniture', 1500.00),
+(9, 'Microwave', 'Appliances', 300.00),
+(10, 'Desk', 'Furniture', 250.00);
+
+-- Create the second table: branch2
+same columns as branch1
+
+-- Insert 10 values into branch2
+INSERT INTO branch2 (id, product_name, category, price) VALUES
+(2, 'Refrigerator', 'Appliances', 1200.00),
+(3, 'Smartphone', 'Electronics', 500.00),
+(11, 'Air Conditioner', 'Appliances', 1500.00),
+(12, 'Bed', 'Furniture', 2000.00),
+(13, 'Fan', 'Appliances', 100.00),
+(14, 'Wardrobe', 'Furniture', 850.00),
+(15, 'Printer', 'Electronics', 300.00),
+(16, 'Vacuum Cleaner', 'Appliances', 400.00),
+(17, 'Dining Table', 'Furniture', 1100.00),
+(18, 'Blender', 'Appliances', 150.00);
+
+
+1) Combine products from branch1 and branch2, removing duplicates
+
+2) Combine products from branch1 and branch2, including duplicates
+
+3) Fetch all Furniture category products from both branches, removing duplicates
+
+4) Combine products from branch1 and branch2, and sort by price
+
+5) Fetch Electronics category products from branch1 and all products priced above 1000 from branch2
+

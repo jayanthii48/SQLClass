@@ -33,7 +33,7 @@ SELECT DISTINCT e1.name AS manager
 FROM employees AS e1
 JOIN employees AS e2
 ON e1.employee_id = e2.manager_id;
-
+drop table sales
 -- 1. Create the sales table
 CREATE TABLE sales (
     sale_id INT PRIMARY KEY AUTO_INCREMENT,
