@@ -1,0 +1,47 @@
+Create Products Table
+
+    product_id
+    product_name 
+    quantity_in_stock 
+    price 
+
+Create Orders Table
+
+    order_id 
+    product_id FOREIGN KEY 
+    order_date 
+    quantity INT,
+    
+Create Shipments Table
+
+    shipment_id 
+    order_id FOREIGN KEY
+    shipment_date 
+    status ENUM('shipped', 'pending', 'delivered') NOT NULL,
+    
+Insert data into products
+
+INSERT INTO products (product_name, quantity_in_stock, price)
+VALUES
+('Laptop', 100, 1500.00),
+('Smartphone', 200, 800.00),
+('Tablet', 150, 600.00);
+
+Insert data into orders
+INSERT INTO orders (product_id, quantity)
+VALUES
+(1, 10),
+(2, 30),
+(3, 20);
+
+Insert data into shipments
+INSERT INTO shipments (order_id, status)
+VALUES
+(1, 'shipped'),
+(2, 'pending'),
+(3, 'delivered');
+
+Task 1: Create a View for Products with Low Stock
+Task 2: Create a View for Order Details Including Product Information
+Task 3: Create a view that shows orders that are still pending shipment, along with the product name and order details.
+Task 4 : Modify the View to Add Total Stock Value______(quantity_in_stock * price) AS total_stock_value  in product view
