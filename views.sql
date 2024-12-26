@@ -29,6 +29,7 @@ SELECT sale_id, product_name, category, sale_price, discount_percentage
 FROM black_day_sales
 WHERE discount_percentage >= 20.00;
 
+
 --  Query the view for high discounts
 SELECT * FROM high_discount_sales;
 --  Create a view with the WITH CHECK OPTION to ensure only discounted items are inserted/updated
